@@ -1,76 +1,83 @@
-# University-Sports-Reservation
-Modern Program for registration in university
+📘 University Sports Reservation System
 
-# React + TypeScript + Vite
+A modern web application that allows university students to reserve sports facilities, view their bookings, and manage attendance through an admin panel.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project is built using React + TypeScript + Vite for the frontend and Firebase (Auth, Firestore, Cloud Functions) for backend services.
 
-Currently, two official plugins are available:
+🚀 Features
+🎓 Student Side
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Secure login using Firebase Authentication
 
-## React Compiler
+View available sports facilities
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Check available time slots
 
-## Expanding the ESLint configuration
+Make reservations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+View “My Reservations” page
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Cancel reservations
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Automatic reservation conflict prevention
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Email notification on reservation creation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🛠️ Admin Side
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Admin-protected login
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+View all reservations in the system
+
+Filter by date, status, or facility
+
+Change reservation state:
+
+completed
+
+not_attended
+
+Automatic enforcement of “1-week ban” if a student does not attend
+
+Cloud Functions trigger email notifications for penalties
+
+🏗️ Tech Stack
+🎨 Frontend
+
+React 18 (with Hooks & Context API)
+
+TypeScript
+
+Vite for fast development
+
+TailwindCSS / Custom CSS (based on your design)
+
+react-router-dom v6 for routing
+
+Firebase Client SDK
+
+🔥 Backend
+
+Firebase Authentication (Email & Password)
+
+Firestore Database
+
+Firebase Cloud Functions (Node.js + TypeScript)
+
+Email notifications
+
+Reservation penalty logic
+
+Automatic timestamps
+
+Firestore Security Rules
+
+☁️ Other Tools
+
+Firebase Hosting for deployment
+
+GitHub for version control
+
+ESLint + TypeScript rules
+
+Prettier (if used)
