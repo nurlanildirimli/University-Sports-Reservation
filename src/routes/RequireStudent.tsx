@@ -1,10 +1,8 @@
-// src/routes/RequireAdmin.tsx
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { ADMIN_EMAILS } from "./RequireAdmin";
 
-export const ADMIN_EMAILS = ["kingsofreport@gmail.com"]; // burada admin maillerini listele
-
-export default function RequireAdmin() {
+export default function RequireStudent() {
   const { user, loading } = useAuth();
 
   if (loading) {
@@ -17,8 +15,8 @@ export default function RequireAdmin() {
 
   const isAdmin = user.email && ADMIN_EMAILS.includes(user.email);
 
-  if (!isAdmin) {
-    return <Navigate to="/student" replace />;
+  if (isAdmin) {
+    return <Navigate to="/admin" replace />;
   }
 
   return <Outlet />;

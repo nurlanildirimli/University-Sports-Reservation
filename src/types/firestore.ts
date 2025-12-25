@@ -9,13 +9,19 @@ export type Facility = {
   description?: string;
 };
 
+export type FacilityInput = Omit<Facility, "id">;
+
 export type Slot = {
   id: string;
   facilityId: string;
-  startTime: Timestamp;
-  endTime: Timestamp;
-  isAvailable: boolean;
+  dayOfWeek: number; // 0 (Sunday) - 6 (Saturday)
+  startHour: string; // HH:mm
+  endHour: string; // HH:mm
+  isAvailable: boolean; // template on/off
+  isVisible: boolean;
 };
+
+export type SlotInput = Omit<Slot, "id">;
 
 export type ReservationStatus = "active" | "cancelled" | "completed"| "not_attended";
 
